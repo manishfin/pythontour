@@ -6,10 +6,10 @@
 # sol:
 from random import randint
 
-def getRandomIntegers(length, start=0, stop=100):
+def getRandomIntegers(length, start=0, end=100):
     integersList = []
     while length > 0:
-        integersList.append(randint(start, stop))
+        integersList.append(randint(start, end))
         length -= 1
     return integersList
 
