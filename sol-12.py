@@ -35,10 +35,10 @@ class Prime:
         
     def previousPrime(self, num):
         if num <= 2: return 2
-        prevNum = num - 1
+        preNum = num - 1
         while True:
-            if self.isPrime(prevNum): return prevNum
-            prevNum -= 1
+            if self.isPrime(preNum): return preNum
+            preNum -= 1
 
     def getAllPrimes(self, num):
         return [i for i in range(2, num+1) if self.isPrime(i)]
