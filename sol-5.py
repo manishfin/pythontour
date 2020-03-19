@@ -7,11 +7,7 @@
 from random import randint
 
 def getRandomIntegers(length, start=0, end=100):
-    integersList = []
-    while length > 0:
-        integersList.append(randint(start, end))
-        length -= 1
-    return integersList
+    return [randint(start, end) for i in range(length + 1)]
 
 if __name__ == "__main__":
     print(getRandomIntegers(100))
