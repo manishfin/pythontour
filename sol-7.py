@@ -11,16 +11,12 @@
 from random import randint
 
 def getRandomIntegers(length, start=0, end=100):
-    integersList = []
-    while length > 0:
-        integersList.append(randint(start, end))
-        length -= 1
-    return integersList
+    return [randint(start, end) for i in range(length + 1)]
 
 def getFrequencies(numbers):
     output = {}
     for i in numbers:
-        if output.get(i):
+        if i in output:
             output[i] += 1
         else:
             output[i] = 1
