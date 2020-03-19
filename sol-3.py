@@ -5,8 +5,8 @@
 # Output: 4
 
 # sol:
-def print_twice(number):
-    print (2 * number)
+def getTwice(number):
+    return 2 * number
 
 if __name__ == "__main__":
-    print_twice(2)
+    print(getTwice(2))
