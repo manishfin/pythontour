@@ -12,11 +12,14 @@ p.getallprimes(10) # 2, 3, 5, 7
 '''
 
 # sol:
+import math
 from itertools import count, islice
 
 class Prime:
     def isPrime(self, num):
-        return all(num % i for i in range(2, int(num**0.5) + 1)) and num > 1
+        for i in range(2, int(math.sqrt(num) + 1)):
+            if num % i == 0: return False
+        return True
 
     def generatePrimes(self):
         yield 2
@@ -24,7 +27,7 @@ class Prime:
             if self.isPrime(num): yield num
     
     def nthPrime(self, num):
-        return next(islice(self.generatePrimes(), num, None))
+        return next(islice(self.generatePrimes(), num - 1, None))
 
     def nextPrime(self, num):
         if num <= 1: return 2
